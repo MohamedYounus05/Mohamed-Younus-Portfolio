@@ -385,7 +385,7 @@ const Hero = () => {
           ref={socialsRef}
           className="absolute bottom-24 left-1/2 -translate-x-1/2 z-20 pointer-events-auto"
         >
-          <div className="flex items-center justify-center gap-1 sm:gap-2 px-2 sm:px-4 py-2 rounded-full bg-white/[0.04] border border-white/[0.08] backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.6)] w-[280px] sm:w-auto">
+          <div className="grid grid-cols-4 sm:flex items-center justify-center gap-2 px-3 py-2 rounded-full bg-white/[0.04] border border-white/[0.08] backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.6)] w-[260px] sm:w-auto">
             {socialLinks.map((link) => (
               <MagneticButton
                 key={link.id}
@@ -397,7 +397,7 @@ const Hero = () => {
                 <span className="transition-colors duration-300 group-hover/social:text-[#00D9FF]">
                   {link.icon}
                 </span>
-                <span className="text-[11px] font-semibold tracking-wide font-mono uppercase hidden sm:inline transition-colors duration-300 group-hover/social:text-[#00D9FF]">
+                <span className="hidden md:inline text-[11px] font-semibold tracking-wide font-mono uppercase">
                   {link.label}
                 </span>
                 {/* Tooltip for mobile */}
