@@ -70,7 +70,7 @@ const Hero = () => {
       label: 'LinkedIn',
       url: 'https://www.linkedin.com/in/mohamed-younus05',
       icon: (
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
           <rect x="2" y="9" width="4" height="12" />
           <circle cx="4" cy="4" r="2" />
@@ -82,7 +82,7 @@ const Hero = () => {
       label: 'GitHub',
       url: 'https://github.com/MohamedYounus05',
       icon: (
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
         </svg>
       )
@@ -92,7 +92,7 @@ const Hero = () => {
       label: 'Instagram',
       url: 'https://www.instagram.com/_mohamed_younus_05?igsh=aTR3bmZkZzQ0M3Vm',
       icon: (
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
           <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
           <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
@@ -104,7 +104,7 @@ const Hero = () => {
       label: 'Email',
       url: 'mailto:mohamedyounus0572@gmail.com',
       icon: (
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
           <polyline points="22,6 12,13 2,6" />
         </svg>
@@ -385,14 +385,14 @@ const Hero = () => {
           ref={socialsRef}
           className="absolute bottom-24 left-1/2 -translate-x-1/2 z-20 pointer-events-auto"
         >
-          <div className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-white/[0.04] border border-white/[0.08] backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.6)]">
+          <div className="flex items-center justify-center gap-1 sm:gap-2 px-2 sm:px-4 py-2 rounded-full bg-white/[0.04] border border-white/[0.08] backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.6)] w-[280px] sm:w-auto">
             {socialLinks.map((link) => (
               <MagneticButton
                 key={link.id}
                 href={link.url}
                 target={link.id === 'email' ? undefined : '_blank'}
                 rel={link.id === 'email' ? undefined : 'noreferrer'}
-                className="group/social relative flex items-center gap-2 px-4 py-2 rounded-full text-white/70 hover:text-white transition-all duration-300 hover:bg-[#00D9FF]/10 hover:shadow-[0_0_18px_rgba(0,217,255,0.25)] interactive"
+                className="group/social relative flex-1 sm:flex-none flex items-center justify-center gap-1 px-2 sm:px-4 py-2 rounded-full text-white/70 hover:text-white transition-all duration-300 hover:bg-[#00D9FF]/10 hover:shadow-[0_0_18px_rgba(0,217,255,0.25)] interactive"
               >
                 <span className="transition-colors duration-300 group-hover/social:text-[#00D9FF]">
                   {link.icon}
