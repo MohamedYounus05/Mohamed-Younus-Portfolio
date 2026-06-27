@@ -18,7 +18,9 @@ const Certificates = () => {
       <div className="max-w-6xl mx-auto flex flex-col gap-14">
         {/* Heading */}
         <div className="flex flex-col gap-3">
-          <h2 className="text-4xl md:text-6xl font-extrabold tracking-tighter font-syne">CERTIFICATES</h2>
+         <h2 className="text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tight leading-none break-words font-syne">
+  CERTIFICATES
+</h2>
           <p className="text-sm text-zinc-500 max-w-xl font-light">{certificates.length} certifications from industry leaders</p>
         </div>
 
