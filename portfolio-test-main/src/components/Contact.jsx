@@ -3,12 +3,6 @@ import { motion, AnimatePresence, useInView } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import { personalInfo } from '../data/portfolioData';
 
-// EmailJS Configuration constants
-// Replace with your EmailJS service ID, template ID, and public key
-const EMAILJS_SERVICE_ID = 'service_mohamedyounus';
-const EMAILJS_TEMPLATE_ID = 'template_mohamedyounus';
-const EMAILJS_PUBLIC_KEY = 'YOUR_EMAILJS_PUBLIC_KEY';
-
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [copied, setCopied] = useState(false);
@@ -23,53 +17,40 @@ const Contact = () => {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const handleFormSubmit = (e) => {
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const sendEmail = async (e) => {
     e.preventDefault();
-    setError('');
 
-    const { name, email, message } = formData;
+    try {
+      await emailjs.send(
+        "service_tvp6nf4",
+        "template_rfxs4yh",
+        {
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        },
+        "odtukmv_qznrNwK54"
+      );
 
-    // Validate fields are not empty
-    if (!name.trim() || !email.trim() || !message.trim()) {
-      setError('Please fill in all required fields (Name, Email Address, and Message).');
-      return;
+      alert("Message sent successfully!");
+
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error(error);
+      alert("Failed to send message.");
     }
-
-    // Validate email format
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email.trim())) {
-      setError('Please enter a valid email address.');
-      return;
-    }
-
-    setStatus('submitting');
-
-    // Build the parameters template expects
-    const templateParams = {
-      from_name: name.trim(),
-      from_email: email.trim(),
-      message: message.trim(),
-      date_time: new Date().toLocaleString(),
-      to_email: 'mohamedyounus0572@gmail.com'
-    };
-
-    emailjs.send(
-      EMAILJS_SERVICE_ID,
-      EMAILJS_TEMPLATE_ID,
-      templateParams,
-      EMAILJS_PUBLIC_KEY
-    )
-    .then((response) => {
-      console.log('EmailJS Success:', response.status, response.text);
-      setStatus('success');
-      setFormData({ name: '', email: '', message: '' });
-      setTimeout(() => setStatus('idle'), 4000);
-    })
-    .catch((err) => {
-      console.error('EmailJS Error:', err);
-      setStatus('idle');
-      setError('Failed to send message. Please try again.');
-    });
   };
 
   return (
@@ -183,16 +164,17 @@ const Contact = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="lg:col-span-7"
           >
-            <form onSubmit={handleFormSubmit} className="flex flex-col gap-6 p-8 rounded-3xl bg-zinc-900/20 border border-white/5 backdrop-blur-md relative overflow-hidden">
+            <form onSubmit={sendEmail} className="flex flex-col gap-6 p-8 rounded-3xl bg-zinc-900/20 border border-white/5 backdrop-blur-md relative overflow-hidden">
               
               {/* Form Input fields */}
               <div className="flex flex-col gap-2">
                 <label className="text-xs uppercase tracking-widest font-mono text-zinc-500">Name</label>
                 <input 
                   type="text" 
+                  name="name"
                   required
                   value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  onChange={handleChange}
                   placeholder="Enter name"
                   className="bg-white/5 border border-white/5 rounded-xl px-5 py-4 w-full text-white placeholder:text-zinc-600 focus:outline-none focus:border-[#00D9FF]/60 focus:bg-white/[0.08] transition-all"
                 />
@@ -202,9 +184,10 @@ const Contact = () => {
                 <label className="text-xs uppercase tracking-widest font-mono text-zinc-500">Email Address</label>
                 <input 
                   type="email" 
+                  name="email"
                   required
                   value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  onChange={handleChange}
                   placeholder="name@example.com"
                   className="bg-white/5 border border-white/5 rounded-xl px-5 py-4 w-full text-white placeholder:text-zinc-600 focus:outline-none focus:border-[#00D9FF]/60 focus:bg-white/[0.08] transition-all"
                 />
@@ -213,10 +196,11 @@ const Contact = () => {
               <div className="flex flex-col gap-2">
                 <label className="text-xs uppercase tracking-widest font-mono text-zinc-500">Message</label>
                 <textarea 
+                  name="message"
                   rows="4"
                   required
                   value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  onChange={handleChange}
                   placeholder="Your message details..."
                   className="bg-white/5 border border-white/5 rounded-xl px-5 py-4 w-full text-white placeholder:text-zinc-600 focus:outline-none focus:border-[#00D9FF]/60 focus:bg-white/[0.08] transition-all resize-none"
                 />
@@ -232,19 +216,9 @@ const Contact = () => {
               {/* Submit Button with loader */}
               <button
                 type="submit"
-                disabled={status !== 'idle'}
                 className="py-4 bg-[#00D9FF] text-black hover:bg-white hover:shadow-[0_0_20px_rgba(0,217,255,0.4)] font-bold uppercase tracking-wider text-xs rounded-xl transition-all duration-300 flex items-center justify-center gap-2 interactive"
               >
-                {status === 'submitting' ? (
-                  <>
-                    <span className="w-4 h-4 rounded-full border-2 border-black border-t-transparent animate-spin" />
-                    Deploying Stream
-                  </>
-                ) : status === 'success' ? (
-                  'Message Transmitted!'
-                ) : (
-                  'Transmit Message'
-                )}
+                TRANSMIT MESSAGE
               </button>
 
               {/* Success Notification Alert */}
