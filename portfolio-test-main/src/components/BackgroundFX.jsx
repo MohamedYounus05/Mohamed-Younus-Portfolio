@@ -77,7 +77,7 @@ const BackgroundFX = () => {
       // Draw mouse-follow spotlight gradient (Layer 6)
       const spotlight = ctx.createRadialGradient(
         mouse.x, mouse.y, 0,
-        mouse.x, mouse.y, Math.max(350, canvas.width * 0.25)
+        mouse.x, mouse.y, Math.max(150, Math.min(350, canvas.width * 0.4))
       );
       spotlight.addColorStop(0, 'rgba(6, 182, 212, 0.04)'); // Cyan soft glow
       spotlight.addColorStop(0.5, 'rgba(59, 130, 246, 0.02)'); // Blue soft glow

@@ -101,12 +101,12 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-4 xl:gap-8">
             {sections.map((section) => (
               <div key={section.id} className="relative group">
                 <button
                   onClick={() => scrollToSection(section.id)}
-                  className={`text-sm font-medium tracking-wide uppercase transition-colors duration-300 relative py-1 hover:text-[#00D9FF] interactive ${
+                  className={`text-xs xl:text-sm font-medium tracking-wide uppercase transition-colors duration-300 relative py-1 hover:text-[#00D9FF] interactive ${
                     activeSection === section.id ? 'text-[#00D9FF]' : 'text-zinc-500'
                   }`}
                 >

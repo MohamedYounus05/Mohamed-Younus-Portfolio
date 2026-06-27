@@ -20,19 +20,26 @@ const Achievements = () => {
     <section 
       id="achievements" 
       ref={containerRef}
-      className="relative py-32 px-6 md:px-12 bg-black border-b border-white/5 font-satoshi text-white"
+      className="relative py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-12 bg-black border-b border-white/5 font-satoshi text-white overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto flex flex-col gap-20 relative z-10">
+      <div className="max-w-7xl mx-auto flex flex-col gap-10 sm:gap-20 relative z-10">
         
         {/* Section Heading */}
+<<<<<<< HEAD
         <div className="flex flex-col gap-4">
       <h2 className="w-full text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tight leading-none break-words">
   ACHIEVEMENTS
 </h2>
+=======
+        <div className="flex flex-col gap-3 overflow-hidden">
+          <h2 className="text-[clamp(1.6rem,6vw,3.75rem)] font-extrabold tracking-tighter font-syne text-white leading-none break-words">
+            ACHIEVEMENTS
+          </h2>
+>>>>>>> 0278855 (Improve mobile responsiveness and update portfolio)
         </div>
 
         {/* Achievements Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid gap-6" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(min(300px, 100%), 1fr))' }}>
           {achievements.map((ach, idx) => (
             <motion.div
               key={ach.id}
@@ -59,14 +66,14 @@ const Achievements = () => {
               </div>
 
               {/* Title Description */}
-              <div className="flex flex-col gap-2">
-                <div className="flex items-center gap-3">
-                  <span className="text-xl">🏆</span>
-                  <h3 className="text-lg font-bold font-syne text-white group-hover:text-[#00D9FF] transition-colors duration-300">
+              <div className="flex flex-col gap-2 min-w-0">
+                <div className="flex items-start gap-3 min-w-0">
+                  <span className="text-xl flex-shrink-0">🏆</span>
+                  <h3 className="text-base sm:text-lg font-bold font-syne text-white group-hover:text-[#00D9FF] transition-colors duration-300 break-words">
                     {ach.title}
                   </h3>
                 </div>
-                <p className="text-xs text-zinc-500 leading-relaxed font-light font-mono">
+                <p className="text-[11px] sm:text-xs text-zinc-500 leading-relaxed font-light font-mono break-words">
                   {ach.description}
                 </p>
               </div>

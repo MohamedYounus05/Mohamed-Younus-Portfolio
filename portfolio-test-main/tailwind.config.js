@@ -2,6 +2,14 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    screens: {
+      'xs': '375px',
+      'sm': '640px',
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1280px',
+      '2xl': '1536px',
+    },
     extend: {
       fontFamily: {
         syne: ["Syne", "sans-serif"],
@@ -14,6 +22,25 @@ export default {
         "music-bar-1": "music-bar-1 0.6s ease-in-out infinite",
         "music-bar-2": "music-bar-2 0.7s ease-in-out infinite",
         "music-bar-3": "music-bar-3 0.5s ease-in-out infinite",
+      },
+
+      keyframes: {
+        "slide-horizontal": {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+        "music-bar-1": {
+          "0%, 100%": { height: "4px" },
+          "50%": { height: "24px" },
+        },
+        "music-bar-2": {
+          "0%, 100%": { height: "8px" },
+          "50%": { height: "28px" },
+        },
+        "music-bar-3": {
+          "0%, 100%": { height: "6px" },
+          "50%": { height: "20px" },
+        },
       },
     },
   },

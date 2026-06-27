@@ -64,17 +64,34 @@ const Hero = () => {
   const [imagesLoaded, setImagesLoaded] = useState(0);
   const [buffering, setBuffering] = useState(true);
   const imagesRef = useRef([]);
+  // Uniform icon component — ensures every icon renders at exactly the same size (20×20)
+  const SocialIcon = ({ children }) => (
+    <span className="flex items-center justify-center flex-shrink-0" style={{ width: '20px', height: '20px' }}>
+      {children}
+    </span>
+  );
+
   const socialLinks = [
     {
       id: 'linkedin',
       label: 'LinkedIn',
       url: 'https://www.linkedin.com/in/mohamed-younus05',
       icon: (
+<<<<<<< HEAD
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
           <rect x="2" y="9" width="4" height="12" />
           <circle cx="4" cy="4" r="2" />
         </svg>
+=======
+        <SocialIcon>
+          <svg className="w-full h-full" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+            <rect x="2" y="9" width="4" height="12" />
+            <circle cx="4" cy="4" r="2" />
+          </svg>
+        </SocialIcon>
+>>>>>>> 0278855 (Improve mobile responsiveness and update portfolio)
       )
     },
     {
@@ -82,9 +99,17 @@ const Hero = () => {
       label: 'GitHub',
       url: 'https://github.com/MohamedYounus05',
       icon: (
+<<<<<<< HEAD
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
         </svg>
+=======
+        <SocialIcon>
+          <svg className="w-full h-full" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+          </svg>
+        </SocialIcon>
+>>>>>>> 0278855 (Improve mobile responsiveness and update portfolio)
       )
     },
     {
@@ -92,11 +117,21 @@ const Hero = () => {
       label: 'Instagram',
       url: 'https://www.instagram.com/_mohamed_younus_05?igsh=aTR3bmZkZzQ0M3Vm',
       icon: (
+<<<<<<< HEAD
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
           <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
           <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
         </svg>
+=======
+        <SocialIcon>
+          <svg className="w-full h-full" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+          </svg>
+        </SocialIcon>
+>>>>>>> 0278855 (Improve mobile responsiveness and update portfolio)
       )
     },
     {
@@ -104,10 +139,19 @@ const Hero = () => {
       label: 'Email',
       url: 'mailto:mohamedyounus0572@gmail.com',
       icon: (
+<<<<<<< HEAD
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
           <polyline points="22,6 12,13 2,6" />
         </svg>
+=======
+        <SocialIcon>
+          <svg className="w-full h-full" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+            <polyline points="22,6 12,13 2,6" />
+          </svg>
+        </SocialIcon>
+>>>>>>> 0278855 (Improve mobile responsiveness and update portfolio)
       )
     }
   ];
@@ -330,14 +374,14 @@ const Hero = () => {
         />
 
         {/* Layer 2 (z-10): Centered Hero Content */}
-        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center select-none pointer-events-none">
+        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center select-none pointer-events-none px-4">
           
           {/* Split Name Layout */}
-          <div className="flex flex-col sm:flex-row items-center justify-between w-full px-[6vw] h-1/3 gap-4 sm:gap-0">
+          <div className="flex flex-col sm:flex-row items-center justify-between w-full px-[4vw] sm:px-[6vw] h-auto sm:h-1/3 gap-3 sm:gap-0 mt-[-10vh] sm:mt-0">
             
             {/* Left Name Block */}
             <div ref={nameLeftRef} className="flex-1 text-center will-change-transform">
-              <h1 className="text-[clamp(1.8rem,6vw,2.5rem)] sm:text-[clamp(1.2rem,3.4vw,5rem)] font-extrabold tracking-widest text-white font-syne drop-shadow-[0_0_15px_rgba(255,255,255,0.12)] whitespace-nowrap">
+              <h1 className="text-[clamp(1.8rem,7vw,2.5rem)] sm:text-[clamp(1.2rem,3.4vw,5rem)] font-extrabold tracking-widest text-white font-syne drop-shadow-[0_0_15px_rgba(255,255,255,0.12)] whitespace-normal sm:whitespace-nowrap">
                 MOHAMED
               </h1>
             </div>
@@ -347,7 +391,7 @@ const Hero = () => {
 
             {/* Right Name Block */}
             <div ref={nameRightRef} className="flex-1 text-center will-change-transform">
-              <h1 className="text-[clamp(1.8rem,6vw,2.5rem)] sm:text-[clamp(1.2rem,3.4vw,5rem)] font-extrabold tracking-widest text-white font-syne drop-shadow-[0_0_15px_rgba(255,255,255,0.12)] whitespace-nowrap">
+              <h1 className="text-[clamp(1.8rem,7vw,2.5rem)] sm:text-[clamp(1.2rem,3.4vw,5rem)] font-extrabold tracking-widest text-white font-syne drop-shadow-[0_0_15px_rgba(255,255,255,0.12)] whitespace-normal sm:whitespace-nowrap">
                 YOUNUS
               </h1>
             </div>
@@ -355,24 +399,24 @@ const Hero = () => {
           </div>
 
           {/* Subtitle - Pushed down to fully reveal the tie and suit area */}
-          <div ref={subtitleRef} className="relative top-[75px] mt-28 text-center px-6">
-            <p className="text-xs sm:text-sm md:text-base font-semibold tracking-[0.3em] text-white font-syne uppercase drop-shadow-[0_0_10px_rgba(255,255,255,0.15)]">
+          <div ref={subtitleRef} className="relative mt-6 sm:mt-24 md:mt-28 text-center px-3 sm:px-4 w-full max-w-4xl">
+            <p className="text-[clamp(0.55rem,1.8vw,0.85rem)] sm:text-xs md:text-sm lg:text-base font-semibold tracking-[0.08em] sm:tracking-[0.3em] text-white font-syne uppercase drop-shadow-[0_0_10px_rgba(255,255,255,0.15)] leading-relaxed break-words">
               Python Developer • Artificial Intelligence • Machine Learning • Data Analyst
             </p>
           </div>
 
           {/* Headline Ticker Loop - Pushed down slightly below the subtitle */}
-          <div ref={tickerRef} className="w-full max-w-5xl relative top-[75px] mt-[28px] overflow-hidden py-3 pointer-events-auto">
-            <div className="absolute left-0 inset-y-0 w-24 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
-            <div className="absolute right-0 inset-y-0 w-24 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
+          <div ref={tickerRef} className="w-full max-w-5xl relative mt-3 sm:mt-8 overflow-hidden py-2 sm:py-3 pointer-events-auto">
+            <div className="absolute left-0 inset-y-0 w-12 sm:w-24 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 inset-y-0 w-12 sm:w-24 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
             
-            <div className="flex w-max gap-8 animate-marquee hover:[animation-play-state:paused] cursor-pointer">
+            <div className="flex w-max gap-5 sm:gap-8 animate-marquee hover:[animation-play-state:paused] cursor-pointer">
               {[...headlines, ...headlines].map((headline, i) => (
-                <div key={i} className="flex items-center gap-6 whitespace-nowrap">
-                  <span className="text-xs font-semibold uppercase tracking-widest text-zinc-300 font-mono hover:text-white transition-colors duration-300">
+                <div key={i} className="flex items-center gap-4 sm:gap-6 whitespace-nowrap">
+                  <span className="text-[9px] sm:text-xs font-semibold uppercase tracking-widest text-zinc-300 font-mono hover:text-white transition-colors duration-300">
                     {headline}
                   </span>
-                  <span className="w-1.5 h-1.5 rounded-full bg-white shadow-[0_0_6px_rgba(255,255,255,0.8)]" />
+                  <span className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-white shadow-[0_0_6px_rgba(255,255,255,0.8)]" />
                 </div>
               ))}
             </div>
@@ -381,23 +425,53 @@ const Hero = () => {
         </div>
 
         {/* Layer 3 (z-20): Social Links Bar — Cinematic Glassmorphism */}
+        {/* Outer wrapper: GSAP animates opacity/y here. Centering via flex (not transform) so GSAP doesn't break it. */}
         <div
           ref={socialsRef}
-          className="absolute bottom-24 left-1/2 -translate-x-1/2 z-20 pointer-events-auto"
+          className="absolute bottom-16 sm:bottom-24 left-0 right-0 z-20 flex justify-center pointer-events-none"
         >
+<<<<<<< HEAD
           <div className="flex items-center justify-evenly gap-1 px-3 py-2 rounded-full bg-white/[0.04] border border-white/[0.08] backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.6)] w-[220px] sm:w-auto">
+=======
+          {/* Glass container: fit-content width, max-width prevents edge touching, overflow hidden */}
+          <div
+            className="pointer-events-auto rounded-full bg-white/[0.04] border border-white/[0.08] backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.6)]"
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              gap: '16px',
+              width: 'fit-content',
+              maxWidth: 'calc(100vw - 32px)',
+              overflow: 'hidden',
+              paddingLeft: '16px',
+              paddingRight: '16px',
+              paddingTop: '6px',
+              paddingBottom: '6px',
+            }}
+          >
+>>>>>>> 0278855 (Improve mobile responsiveness and update portfolio)
             {socialLinks.map((link) => (
               <MagneticButton
                 key={link.id}
                 href={link.url}
                 target={link.id === 'email' ? undefined : '_blank'}
                 rel={link.id === 'email' ? undefined : 'noreferrer'}
+<<<<<<< HEAD
                 className="group/social relative flex-1 sm:flex-none flex items-center justify-center gap-1 px-2 sm:px-4 py-2 rounded-full text-white/70 hover:text-white transition-all duration-300 hover:bg-[#00D9FF]/10 hover:shadow-[0_0_18px_rgba(0,217,255,0.25)] interactive"
+=======
+                className="social-icon-btn group/social relative flex items-center justify-center gap-2 rounded-full text-white/70 hover:text-white transition-all duration-300 hover:bg-[#00D9FF]/10 hover:shadow-[0_0_18px_rgba(0,217,255,0.25)] interactive"
+>>>>>>> 0278855 (Improve mobile responsiveness and update portfolio)
               >
-                <span className="transition-colors duration-300 group-hover/social:text-[#00D9FF]">
+                <span className="flex items-center justify-center transition-colors duration-300 group-hover/social:text-[#00D9FF]">
                   {link.icon}
                 </span>
+<<<<<<< HEAD
                 <span className="hidden md:inline text-[11px] font-semibold tracking-wide font-mono uppercase">
+=======
+                {/* Labels hidden on phones, visible on tablet+ */}
+                <span className="text-[11px] font-semibold tracking-wide font-mono uppercase hidden sm:inline transition-colors duration-300 group-hover/social:text-[#00D9FF]">
+>>>>>>> 0278855 (Improve mobile responsiveness and update portfolio)
                   {link.label}
                 </span>
                 {/* Tooltip for mobile */}
@@ -412,12 +486,12 @@ const Hero = () => {
         {/* Layer 4 (z-20): Scroll Indicator */}
         <div
           ref={scrollIndicatorRef}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 pointer-events-none"
+          className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 pointer-events-none"
         >
-          <span className="text-[10px] font-mono uppercase tracking-[0.25em] text-zinc-500">
+          <span className="text-[9px] sm:text-[10px] font-mono uppercase tracking-[0.25em] text-zinc-500">
             Scroll
           </span>
-          <div className="w-[1px] h-8 bg-gradient-to-b from-zinc-500 to-transparent" />
+          <div className="w-[1px] h-6 sm:h-8 bg-gradient-to-b from-zinc-500 to-transparent" />
         </div>
 
       </div>

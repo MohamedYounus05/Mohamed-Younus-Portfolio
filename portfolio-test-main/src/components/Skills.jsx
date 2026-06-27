@@ -119,6 +119,8 @@ const SkillCard = React.forwardRef(({ tech, index }, ref) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseMove = (e) => {
+    // Disable hover 3D tilt effects on touch devices
+    if (window.matchMedia('(pointer: coarse)').matches) return;
     const card = innerRef.current;
     if (!card) return;
     const rect = card.getBoundingClientRect();
@@ -144,7 +146,7 @@ const SkillCard = React.forwardRef(({ tech, index }, ref) => {
   return (
     <div
       ref={ref}
-      className="absolute w-[210px] h-[310px] md:w-[250px] md:h-[350px] flex items-center justify-center pointer-events-none"
+      className="absolute w-[clamp(170px,48vw,210px)] h-[clamp(260px,70vw,310px)] md:w-[250px] md:h-[350px] flex items-center justify-center pointer-events-none"
       style={{ transformStyle: "preserve-3d" }}
     >
       <div
@@ -152,7 +154,7 @@ const SkillCard = React.forwardRef(({ tech, index }, ref) => {
         onMouseMove={handleMouseMove}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={handleMouseLeave}
-        className="w-full h-full rounded-2xl border border-white/20 flex flex-col justify-between p-6 shadow-[0_12px_40px_rgba(0,0,0,0.75)] backdrop-blur-2xl transition-all duration-300 ease-out select-none group relative bg-zinc-950/85 pointer-events-auto cursor-pointer"
+        className="w-full h-full rounded-2xl border border-white/20 flex flex-col justify-between p-4 sm:p-6 shadow-[0_12px_40px_rgba(0,0,0,0.75)] backdrop-blur-2xl transition-all duration-300 ease-out select-none group relative bg-zinc-950/85 pointer-events-auto cursor-pointer"
         style={{
           transform: transformStyle,
           background: "linear-gradient(135deg, rgba(22,22,22,0.9) 0%, rgba(10,10,10,0.96) 100%)",
@@ -177,23 +179,23 @@ const SkillCard = React.forwardRef(({ tech, index }, ref) => {
 
         {/* Card Header */}
         <div className="flex justify-between items-start w-full relative z-10">
-          <div className="w-14 h-14 rounded-2xl bg-white/[0.02] border border-white/5 flex items-center justify-center relative transition-all duration-300 group-hover:border-white/20 shadow-inner">
-            <div className={`absolute inset-0 bg-gradient-to-br ${tech.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300 rounded-2xl`} />
+          <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-white/[0.02] border border-white/5 flex items-center justify-center relative transition-all duration-300 group-hover:border-white/20 shadow-inner">
+            <div className={`absolute inset-0 bg-gradient-to-br ${tech.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300 rounded-xl sm:rounded-2xl`} />
             <TechIcon name={tech.name} />
           </div>
-          <span className="text-[10px] font-mono text-zinc-600 uppercase tracking-widest font-bold">
+          <span className="text-[9px] sm:text-[10px] font-mono text-zinc-600 uppercase tracking-widest font-bold">
             {String(index + 1).padStart(2, '0')}
           </span>
         </div>
 
         {/* Card Footer */}
-        <div className="flex flex-col gap-4 relative z-10">
-          <div className={`w-12 h-1 rounded bg-gradient-to-r ${tech.gradient} shadow-[0_0_8px_rgba(6,182,212,0.15)]`} />
-          <div className="flex flex-col gap-1.5">
-            <h3 className="text-lg md:text-xl font-bold tracking-tight text-white font-syne group-hover:text-[#00D9FF] transition-colors">
+        <div className="flex flex-col gap-2 sm:gap-4 relative z-10">
+          <div className={`w-8 sm:w-12 h-1 rounded bg-gradient-to-r ${tech.gradient} shadow-[0_0_8px_rgba(6,182,212,0.15)]`} />
+          <div className="flex flex-col gap-1 sm:gap-1.5">
+            <h3 className="text-base sm:text-lg md:text-xl font-bold tracking-tight text-white font-syne group-hover:text-[#00D9FF] transition-colors">
               {tech.name}
             </h3>
-            <p className="text-[10px] md:text-xs text-zinc-500 font-light leading-relaxed">
+            <p className="text-[9px] sm:text-[10px] md:text-xs text-zinc-500 font-light leading-relaxed">
               {tech.desc}
             </p>
           </div>
@@ -311,7 +313,7 @@ const Skills = () => {
     });
 
     // ── Original horizontal row positions (kept identical) ──
-    const spacing = isMobile ? 110 : 210;
+    const spacing = isMobile ? Math.min(105, window.innerWidth * 0.12) : 210;
     const centerIdx = (totalCards - 1) / 2; // 3.5
     const getRowX = (idx) => (idx - centerIdx) * spacing;
 
@@ -470,7 +472,7 @@ const Skills = () => {
     >
       <div
         ref={stickyRef}
-        className="sticky top-0 h-screen w-full flex flex-col justify-between py-16 md:py-20 overflow-hidden bg-black z-10"
+        className="sticky top-0 h-screen w-full flex flex-col justify-between py-8 sm:py-16 md:py-20 overflow-hidden bg-black z-10"
       >
         {/* Particle canvas */}
         <canvas
@@ -479,25 +481,25 @@ const Skills = () => {
         />
 
         {/* Ambient glow lights */}
-        <div className="absolute top-1/4 left-0 w-[400px] h-[400px] bg-[#00D9FF]/[0.02] rounded-full blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-1/4 right-0 w-[400px] h-[400px] bg-[#00D9FF]/[0.02] rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute top-1/4 left-0 w-[400px] max-w-[80vw] h-[400px] max-h-[80vw] bg-[#00D9FF]/[0.02] rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-1/4 right-0 w-[400px] max-w-[80vw] h-[400px] max-h-[80vw] bg-[#00D9FF]/[0.02] rounded-full blur-[120px] pointer-events-none" />
 
         {/* Section Header */}
-        <div className="text-center flex flex-col items-center gap-3 px-6 z-20 relative select-none">
-          <h2 className="text-4.5xl md:text-6xl font-extrabold tracking-tighter font-syne text-white leading-none">
+        <div className="text-center flex flex-col items-center gap-2 sm:gap-3 px-6 z-20 relative select-none">
+          <h2 className="text-[clamp(1.6rem,6vw,3.75rem)] font-extrabold tracking-tighter font-syne text-white leading-none break-words">
             TECH ARSENAL
           </h2>
-          <p className="text-xs md:text-sm text-zinc-500 max-w-xl font-light leading-relaxed">
+          <p className="text-[10px] sm:text-xs md:text-sm text-zinc-500 max-w-xl font-light leading-relaxed">
             Technologies and tools I use to build intelligent, scalable, and modern software solutions.
           </p>
         </div>
 
         {/* Interactive Cards Container */}
         <div className="relative flex-1 w-full flex items-center justify-center overflow-visible z-10 py-6">
-          <div className="absolute w-[500px] h-[500px] rounded-full bg-gradient-radial from-[#00D9FF]/[0.03] to-transparent blur-3xl pointer-events-none" />
+          <div className="absolute w-[500px] max-w-[80vw] h-[500px] max-h-[80vw] rounded-full bg-gradient-radial from-[#00D9FF]/[0.03] to-transparent blur-3xl pointer-events-none" />
 
           {/* Cards Frame */}
-          <div className="relative w-[210px] h-[310px] md:w-[250px] md:h-[350px] flex items-center justify-center">
+          <div className="relative w-[clamp(170px,48vw,210px)] h-[clamp(260px,70vw,310px)] md:w-[250px] md:h-[350px] flex items-center justify-center">
             {techList.map((tech, idx) => (
               <SkillCard
                 key={tech.name}

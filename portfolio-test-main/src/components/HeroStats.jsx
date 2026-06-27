@@ -33,7 +33,7 @@ const Counter = ({ value, suffix }) => {
   return (
     <span
       ref={ref}
-      className="text-4xl md:text-6xl font-extrabold tracking-tighter text-white font-syne drop-shadow-[0_0_15px_rgba(255,255,255,0.15)]"
+      className="text-[clamp(2rem,5vw,3.5rem)] font-extrabold tracking-tighter text-white font-syne drop-shadow-[0_0_15px_rgba(255,255,255,0.15)]"
     >
       {count}{suffix}
     </span>
@@ -57,17 +57,17 @@ const stats = [
 const HeroStats = () => (
   <section
     id="hero-stats"
-    className="relative z-10 w-full bg-black py-20 border-b border-white/5 font-satoshi"
+    className="relative z-10 w-full bg-black py-12 sm:py-16 md:py-20 border-b border-white/5 font-satoshi"
   >
-    <div className="max-w-6xl mx-auto px-6">
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 text-center">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6">
+      <div className="flex flex-wrap justify-center gap-4 sm:gap-6 text-center">
         {stats.map((stat) => (
           <div
             key={stat.id}
-            className="flex flex-col gap-2 p-5 rounded-2xl bg-white/[0.01] border border-white/[0.03] hover:border-white/[0.08] transition-all duration-500"
+            className="flex flex-col justify-center gap-2 p-4 sm:p-5 rounded-2xl bg-white/[0.01] border border-white/[0.03] hover:border-white/[0.08] transition-all duration-500 w-[calc(50%-8px)] sm:w-[calc(33.33%-16px)] md:w-[calc(20%-20px)] min-w-[130px] flex-grow max-w-[220px]"
           >
             <Counter value={stat.value} suffix={stat.suffix} />
-            <span className="text-[10px] uppercase tracking-widest text-zinc-500 font-mono">
+            <span className="text-[9px] sm:text-[10px] uppercase tracking-widest text-zinc-500 font-mono leading-relaxed">
               {stat.label}
             </span>
           </div>

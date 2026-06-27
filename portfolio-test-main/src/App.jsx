@@ -85,16 +85,16 @@ function App() {
         </main>
 
         {/* Premium Footer */}
-        <footer className="relative z-20 bg-[#080808]/80 border-t border-white/5 py-12 px-6 md:px-12 font-satoshi text-zinc-500 text-xs">
+        <footer className="relative z-20 bg-[#080808]/80 border-t border-white/5 py-8 sm:py-12 px-4 sm:px-6 md:px-12 font-satoshi text-zinc-500 text-xs">
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
             
             {/* Logo / copyright */}
             <div className="text-center w-full md:w-auto flex justify-center">
-              <span>© 2026 Mohamed Younus M A K. All Rights Reserved.</span>
+              <span className="leading-relaxed">© 2026 Mohamed Younus M A K. All Rights Reserved.</span>
             </div>
 
             {/* Social Anchors */}
-            <div className="flex gap-6 font-mono uppercase tracking-widest text-[10px]">
+            <div className="flex flex-wrap justify-center gap-4 sm:gap-6 font-mono uppercase tracking-widest text-[9px] sm:text-[10px]">
               <a href="https://github.com/MohamedYounus05" target="_blank" rel="noreferrer" className="hover:text-[#00D9FF] hover:drop-shadow-[0_0_8px_rgba(0,217,255,0.5)] transition-all duration-300 interactive">GitHub ↗</a>
               <a href="https://www.linkedin.com/in/mohamed-younus05" target="_blank" rel="noreferrer" className="hover:text-[#00D9FF] hover:drop-shadow-[0_0_8px_rgba(0,217,255,0.5)] transition-all duration-300 interactive">LinkedIn ↗</a>
               <a href="https://www.instagram.com/_mohamed_younus_05?igsh=aTR3bmZkZzQ0M3Vm" target="_blank" rel="noreferrer" className="hover:text-[#00D9FF] hover:drop-shadow-[0_0_8px_rgba(0,217,255,0.5)] transition-all duration-300 interactive">Instagram ↗</a>
@@ -104,7 +104,7 @@ function App() {
             {/* Back to top scroll trigger */}
             <button
               onClick={handleScrollToTop}
-              className="px-4 py-2 border border-white/10 hover:border-[#00D9FF]/40 hover:text-[#00D9FF] rounded-full transition-colors duration-300 font-mono uppercase tracking-wider text-[10px] interactive"
+              className="px-4 py-2 border border-white/10 hover:border-[#00D9FF]/40 hover:text-[#00D9FF] rounded-full transition-colors duration-300 font-mono uppercase tracking-wider text-[9px] sm:text-[10px] interactive"
             >
               Back to Top ↑
             </button>

@@ -13,19 +13,19 @@ const Experience = () => {
     <section 
       id="experience" 
       ref={containerRef}
-      className="relative py-32 px-6 md:px-12 bg-black border-b border-white/5 font-satoshi text-white"
+      className="relative py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-12 bg-black border-b border-white/5 font-satoshi text-white"
     >
-      <div className="max-w-7xl mx-auto flex flex-col gap-20 relative z-10">
+      <div className="max-w-7xl mx-auto flex flex-col gap-10 sm:gap-20 relative z-10">
         
         {/* Section Heading */}
-        <div className="flex flex-col gap-4">
-          <h2 className="text-4xl md:text-6xl font-extrabold tracking-tighter font-syne">
+        <div className="flex flex-col gap-3">
+          <h2 className="text-[clamp(1.6rem,6vw,3.75rem)] font-extrabold tracking-tighter font-syne text-white leading-none break-words">
             WORK EXPERIENCE
           </h2>
         </div>
 
         {/* Vertical Timeline Container */}
-        <div className="relative border-l border-white/10 pl-8 ml-4 md:ml-12 flex flex-col gap-12 w-full max-w-5xl">
+        <div className="relative border-l border-white/10 pl-6 sm:pl-8 ml-2 sm:ml-4 md:ml-12 flex flex-col gap-12 w-full max-w-5xl">
           {personalInfo.experience.map((exp, idx) => (
             <motion.div
               key={`${exp.company}-${idx}`}
@@ -35,7 +35,7 @@ const Experience = () => {
               className="relative flex flex-col lg:flex-row gap-8 lg:gap-16 items-start w-full justify-between"
             >
               {/* Pulsing Node */}
-              <div className="absolute left-[-41px] top-[6px] w-6 h-6 rounded-full bg-black border-2 border-[#00D9FF] flex items-center justify-center shadow-[0_0_10px_rgba(0,217,255,0.8)] z-10">
+              <div className="absolute left-[-33px] sm:left-[-37px] top-[6px] w-6 h-6 rounded-full bg-black border-2 border-[#00D9FF] flex items-center justify-center shadow-[0_0_10px_rgba(0,217,255,0.8)] z-10">
                 <span className="w-2.5 h-2.5 rounded-full bg-[#00D9FF] animate-ping" />
                 <span className="w-2.5 h-2.5 rounded-full bg-[#00D9FF] absolute" />
               </div>
@@ -45,7 +45,7 @@ const Experience = () => {
                 {/* Title & Metadata */}
                 <div className="flex items-center justify-between flex-wrap gap-4">
                   <div className="flex flex-col gap-1">
-                    <h3 className="text-2xl font-bold font-syne text-white">
+                    <h3 className="text-xl sm:text-2xl font-bold font-syne text-white">
                       {exp.role}
                     </h3>
                     <span className="text-sm font-semibold text-[#00D9FF] font-mono">

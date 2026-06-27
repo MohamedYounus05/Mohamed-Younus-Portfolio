@@ -18,6 +18,12 @@ h1, h2, h3, h4, h5, h6 {
   @apply font-syne;
 }
 
+/* ── Global Responsive Image Rules ── */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 /* Custom Utilities */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
@@ -70,7 +76,30 @@ html.lenis, html.lenis body {
   pointer-events: none;
 }
 
-/* Interactive Cursor items hook */
-a, button, input, textarea, select, .interactive {
-  cursor: none !important;
+/* Interactive Cursor items hook — desktop only */
+@media (pointer: fine) {
+  a, button, input, textarea, select, .interactive {
+    cursor: none !important;
+  }
+}
+
+/* Restore default cursor on touch devices */
+@media (pointer: coarse) {
+  a, button, input, textarea, select, .interactive {
+    cursor: auto !important;
+  }
+}
+
+/* ── Hero Social Icon Button — responsive sizing ── */
+.social-icon-btn {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+}
+@media (min-width: 640px) {
+  .social-icon-btn {
+    width: auto;
+    height: auto;
+    padding: 8px 16px;
+  }
 }

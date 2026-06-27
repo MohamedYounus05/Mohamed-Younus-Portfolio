@@ -57,16 +57,16 @@ const Contact = () => {
     <section 
       id="contact" 
       ref={containerRef}
-      className="relative py-32 px-6 md:px-12 bg-black overflow-hidden font-satoshi text-white"
+      className="relative py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-12 bg-black overflow-hidden font-satoshi text-white"
     >
       {/* Background glow orbs */}
       <div className="absolute bottom-[-100px] left-[50%] transform -translate-x-1/2 w-[60vw] h-[300px] bg-gradient-to-t from-[#00D9FF]/5 to-transparent blur-[120px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto flex flex-col gap-16 relative z-10">
+      <div className="max-w-7xl mx-auto flex flex-col gap-10 sm:gap-16 relative z-10">
         
         {/* Section Heading */}
-        <div className="flex flex-col gap-4">
-          <h2 className="text-4xl md:text-6xl font-extrabold tracking-tighter font-syne">
+        <div className="flex flex-col gap-3">
+          <h2 className="text-[clamp(1.6rem,6vw,3.75rem)] font-extrabold tracking-tighter font-syne text-white leading-none break-words">
             CONTACT ME
           </h2>
         </div>
@@ -79,13 +79,13 @@ const Contact = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="lg:col-span-5 flex flex-col gap-8"
+            className="lg:col-span-5 flex flex-col gap-6 sm:gap-8"
           >
             <div className="flex flex-col gap-2">
-              <h3 className="text-2xl font-bold font-syne text-white">
+              <h3 className="text-xl sm:text-2xl font-bold font-syne text-white">
                 Let's Build Something Secure & Intelligent
               </h3>
-              <p className="text-sm text-zinc-500 font-light leading-relaxed">
+              <p className="text-xs sm:text-sm text-zinc-500 font-light leading-relaxed">
                 Reach out for internship collaborations, open-source work, full stack projects, or prompt orchestrations queries.
               </p>
             </div>
@@ -93,10 +93,10 @@ const Contact = () => {
             {/* Direct details card set */}
             <div className="flex flex-col gap-4">
               {/* Email Card */}
-              <div className="flex items-center justify-between p-5 rounded-2xl bg-white/[0.02] border border-white/5 backdrop-blur-md hover:border-[#00D9FF]/40 hover:shadow-[0_0_20px_rgba(0,217,255,0.15)] transition-all duration-300">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between p-5 rounded-2xl bg-white/[0.02] border border-white/5 backdrop-blur-md hover:border-[#00D9FF]/40 hover:shadow-[0_0_20px_rgba(0,217,255,0.15)] transition-all duration-300 gap-4">
                 <div className="flex flex-col gap-1">
                   <span className="text-[10px] font-mono text-zinc-500 uppercase">Email</span>
-                  <a href={`mailto:${personalInfo.email}`} className="text-sm font-semibold text-white hover:text-[#00D9FF] transition-colors break-all">
+                  <a href={`mailto:${personalInfo.email}`} className="text-xs sm:text-sm font-semibold text-white hover:text-[#00D9FF] transition-colors break-all">
                     {personalInfo.email}
                   </a>
                 </div>
@@ -117,42 +117,42 @@ const Contact = () => {
               </div>
 
               {/* LinkedIn, GitHub & Instagram Links */}
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 xs:grid-cols-3 gap-3 sm:gap-4">
                 <a 
                   href={personalInfo.linkedin} 
                   target="_blank" 
                   rel="noreferrer"
-                  className="p-5 rounded-2xl bg-white/[0.02] border border-white/5 backdrop-blur-md flex flex-col gap-1 hover:border-[#00D9FF]/40 hover:bg-[#00D9FF]/[0.02] hover:shadow-[0_0_20px_rgba(0,217,255,0.15)] hover:scale-[1.03] transition-all duration-300 group interactive"
+                  className="p-4 sm:p-5 rounded-2xl bg-white/[0.02] border border-white/5 backdrop-blur-md flex flex-col gap-1 hover:border-[#00D9FF]/40 hover:bg-[#00D9FF]/[0.02] hover:shadow-[0_0_20px_rgba(0,217,255,0.15)] hover:scale-[1.03] transition-all duration-300 group interactive"
                 >
-                  <span className="text-[10px] font-mono text-zinc-500 uppercase">LinkedIn ↗</span>
-                  <span className="text-sm font-bold text-white group-hover:text-[#00D9FF] transition-colors">LinkedIn</span>
+                  <span className="text-[9px] sm:text-[10px] font-mono text-zinc-500 uppercase">LinkedIn ↗</span>
+                  <span className="text-xs sm:text-sm font-bold text-white group-hover:text-[#00D9FF] transition-colors">LinkedIn</span>
                 </a>
                 
                 <a 
                   href={personalInfo.github} 
                   target="_blank" 
                   rel="noreferrer"
-                  className="p-5 rounded-2xl bg-white/[0.02] border border-white/5 backdrop-blur-md flex flex-col gap-1 hover:border-[#00D9FF]/40 hover:bg-[#00D9FF]/[0.02] hover:shadow-[0_0_20px_rgba(0,217,255,0.15)] hover:scale-[1.03] transition-all duration-300 group interactive"
+                  className="p-4 sm:p-5 rounded-2xl bg-white/[0.02] border border-white/5 backdrop-blur-md flex flex-col gap-1 hover:border-[#00D9FF]/40 hover:bg-[#00D9FF]/[0.02] hover:shadow-[0_0_20px_rgba(0,217,255,0.15)] hover:scale-[1.03] transition-all duration-300 group interactive"
                 >
-                  <span className="text-[10px] font-mono text-zinc-500 uppercase">GitHub ↗</span>
-                  <span className="text-sm font-bold text-white group-hover:text-[#00D9FF] transition-colors">GitHub</span>
+                  <span className="text-[9px] sm:text-[10px] font-mono text-zinc-500 uppercase">GitHub ↗</span>
+                  <span className="text-xs sm:text-sm font-bold text-white group-hover:text-[#00D9FF] transition-colors">GitHub</span>
                 </a>
 
                 <a 
                   href={personalInfo.instagram} 
                   target="_blank" 
                   rel="noreferrer"
-                  className="p-5 rounded-2xl bg-white/[0.02] border border-white/5 backdrop-blur-md flex flex-col gap-1 hover:border-[#00D9FF]/40 hover:bg-[#00D9FF]/[0.02] hover:shadow-[0_0_20px_rgba(0,217,255,0.15)] hover:scale-[1.03] transition-all duration-300 group interactive"
+                  className="p-4 sm:p-5 rounded-2xl bg-white/[0.02] border border-white/5 backdrop-blur-md flex flex-col gap-1 hover:border-[#00D9FF]/40 hover:bg-[#00D9FF]/[0.02] hover:shadow-[0_0_20px_rgba(0,217,255,0.15)] hover:scale-[1.03] transition-all duration-300 group interactive"
                 >
-                  <span className="text-[10px] font-mono text-zinc-500 uppercase">Instagram ↗</span>
-                  <span className="text-sm font-bold text-white group-hover:text-[#00D9FF] transition-colors">Instagram</span>
+                  <span className="text-[9px] sm:text-[10px] font-mono text-zinc-500 uppercase">Instagram ↗</span>
+                  <span className="text-xs sm:text-sm font-bold text-white group-hover:text-[#00D9FF] transition-colors">Instagram</span>
                 </a>
               </div>
 
               {/* Location Card */}
-              <div className="p-5 rounded-2xl bg-white/[0.02] border border-white/5 backdrop-blur-md flex flex-col gap-1">
-                <span className="text-[10px] font-mono text-zinc-500 uppercase">Location Coordinates</span>
-                <span className="text-sm font-bold text-white">{personalInfo.location}</span>
+              <div className="p-4 sm:p-5 rounded-2xl bg-white/[0.02] border border-white/5 backdrop-blur-md flex flex-col gap-1">
+                <span className="text-[9px] sm:text-[10px] font-mono text-zinc-500 uppercase">Location Coordinates</span>
+                <span className="text-xs sm:text-sm font-bold text-white">{personalInfo.location}</span>
               </div>
             </div>
           </motion.div>
@@ -164,7 +164,7 @@ const Contact = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="lg:col-span-7"
           >
-            <form onSubmit={sendEmail} className="flex flex-col gap-6 p-8 rounded-3xl bg-zinc-900/20 border border-white/5 backdrop-blur-md relative overflow-hidden">
+            <form onSubmit={sendEmail} className="flex flex-col gap-5 sm:gap-6 p-5 sm:p-6 md:p-8 rounded-3xl bg-zinc-900/20 border border-white/5 backdrop-blur-md relative overflow-hidden">
               
               {/* Form Input fields */}
               <div className="flex flex-col gap-2">
