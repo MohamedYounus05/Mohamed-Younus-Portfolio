@@ -26,9 +26,9 @@ const Achievements = () => {
         
         {/* Section Heading */}
         <div className="flex flex-col gap-4">
-          <h2 className="text-4xl md:text-6xl font-extrabold tracking-tighter font-syne">
-            ACHIEVEMENTS
-          </h2>
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tight leading-none break-words font-syne">
+  ACHIEVEMENTS
+</h2>
         </div>
 
         {/* Achievements Grid */}
