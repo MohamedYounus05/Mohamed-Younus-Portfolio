@@ -385,7 +385,7 @@ const Hero = () => {
           ref={socialsRef}
           className="absolute bottom-24 left-1/2 -translate-x-1/2 z-20 pointer-events-auto"
         >
-          <div className="grid grid-cols-4 sm:flex items-center justify-center gap-2 px-3 py-2 rounded-full bg-white/[0.04] border border-white/[0.08] backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.6)] w-[260px] sm:w-auto">
+          <div className="flex items-center justify-evenly gap-1 px-3 py-2 rounded-full bg-white/[0.04] border border-white/[0.08] backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.6)] w-[220px] sm:w-auto">
             {socialLinks.map((link) => (
               <MagneticButton
                 key={link.id}
