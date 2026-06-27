@@ -26,7 +26,7 @@ const Achievements = () => {
         
         {/* Section Heading */}
         <div className="flex flex-col gap-4">
-          <h2 className="text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tight leading-none break-words font-syne">
+         <h2 className="text-[30px] sm:text-5xl md:text-6xl font-extrabold tracking-[-0.04em] leading-none whitespace-nowrap overflow-hidden text-ellipsis font-syne">
   ACHIEVEMENTS
 </h2>
         </div>
